@@ -12,6 +12,7 @@ Links:
     [MNIST Dataset] http://yann.lecun.com/exdb/mnist/
 
 Author: Aymeric Damien
+Refactoring and updating: Steffen Kunz and Ante Skoric
 Project: https://github.com/aymericdamien/TensorFlow-Examples/
 """
 from __future__ import division, print_function, absolute_import
