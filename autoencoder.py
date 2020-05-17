@@ -18,7 +18,11 @@ from __future__ import division, print_function, absolute_import
 
 import matplotlib.pyplot as plt
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 # Import MNIST MNIST_data
 import input_data
 
