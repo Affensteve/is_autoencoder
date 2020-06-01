@@ -1,4 +1,5 @@
-""" MNIST Dataset http://yann.lecun.com/exdb/mnist/
+"""
+MNIST Dataset http://yann.lecun.com/exdb/mnist/
 Created with TensorFlow tutorial
 """
 from __future__ import division, print_function, absolute_import
