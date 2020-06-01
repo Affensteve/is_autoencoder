@@ -40,6 +40,7 @@ examples_to_show = 10
 # Network Parameters
 num_hidden_1 = 256  # 1st layer num features
 num_hidden_2 = 128  # 2nd layer num features (the latent dim)
+#num_hidden_3 = 64
 num_input = 784  # MNIST MNIST_data input (img shape: 28*28)
 
 # tf Graph input (only pictures)
@@ -48,12 +49,16 @@ X = tf.placeholder("float", [None, num_input])
 weights = {
     'encoder_h1': tf.Variable(tf.random_normal([num_input, num_hidden_1])),
     'encoder_h2': tf.Variable(tf.random_normal([num_hidden_1, num_hidden_2])),
+ #   'encoder_h3': tf.Variable(tf.random_normal([num_hidden_2, num_hidden_3])),
+  #  'decoder_h3': tf.Variable(tf.random_normal([num_hidden_3, num_hidden_2])),
     'decoder_h1': tf.Variable(tf.random_normal([num_hidden_2, num_hidden_1])),
     'decoder_h2': tf.Variable(tf.random_normal([num_hidden_1, num_input])),
 }
 biases = {
     'encoder_b1': tf.Variable(tf.random_normal([num_hidden_1])),
     'encoder_b2': tf.Variable(tf.random_normal([num_hidden_2])),
+ #   'encoder_b3': tf.Variable(tf.random_normal([num_hidden_3])),
+  #  'decoder_b3': tf.Variable(tf.random_normal([num_hidden_2])),
     'decoder_b1': tf.Variable(tf.random_normal([num_hidden_1])),
     'decoder_b2': tf.Variable(tf.random_normal([num_input])),
 }
