@@ -6,9 +6,9 @@ from __future__ import division, print_function, absolute_import
 
 import matplotlib.pyplot as plt
 import numpy as np
-#import tensorflow as tf
-
 import tensorflow.compat.v1 as tf
+
+# import tensorflow as tf
 tf.disable_v2_behavior()
 
 # Import MNIST MNIST_data
@@ -17,17 +17,17 @@ import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 # Training Parameters
-learning_rate = 0.01
+learning_rate = 0.05
 num_steps = 30000
 batch_size = 256
 
-display_step = 1000
+display_step = 500
 examples_to_show = 10
 
 # Network Parameters
 num_hidden_1 = 256  # 1st layer num features
 num_hidden_2 = 128  # 2nd layer num features (the latent dim)
-#num_hidden_3 = 64
+# num_hidden_3 = 64
 num_input = 784  # MNIST MNIST_data input (img shape: 28*28)
 
 # tf Graph input (only pictures)
@@ -36,16 +36,16 @@ X = tf.placeholder("float", [None, num_input])
 weights = {
     'encoder_h1': tf.Variable(tf.random_normal([num_input, num_hidden_1])),
     'encoder_h2': tf.Variable(tf.random_normal([num_hidden_1, num_hidden_2])),
- #   'encoder_h3': tf.Variable(tf.random_normal([num_hidden_2, num_hidden_3])),
-  #  'decoder_h3': tf.Variable(tf.random_normal([num_hidden_3, num_hidden_2])),
+    #   'encoder_h3': tf.Variable(tf.random_normal([num_hidden_2, num_hidden_3])),
+    #  'decoder_h3': tf.Variable(tf.random_normal([num_hidden_3, num_hidden_2])),
     'decoder_h1': tf.Variable(tf.random_normal([num_hidden_2, num_hidden_1])),
     'decoder_h2': tf.Variable(tf.random_normal([num_hidden_1, num_input])),
 }
 biases = {
     'encoder_b1': tf.Variable(tf.random_normal([num_hidden_1])),
     'encoder_b2': tf.Variable(tf.random_normal([num_hidden_2])),
- #   'encoder_b3': tf.Variable(tf.random_normal([num_hidden_3])),
-  #  'decoder_b3': tf.Variable(tf.random_normal([num_hidden_2])),
+    #   'encoder_b3': tf.Variable(tf.random_normal([num_hidden_3])),
+    #  'decoder_b3': tf.Variable(tf.random_normal([num_hidden_2])),
     'decoder_b1': tf.Variable(tf.random_normal([num_hidden_1])),
     'decoder_b2': tf.Variable(tf.random_normal([num_input])),
 }
