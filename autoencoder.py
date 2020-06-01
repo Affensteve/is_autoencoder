@@ -1,19 +1,5 @@
-""" Auto Encoder Example.
-
-Build a 2 layers auto-encoder with TensorFlow to compress images to a
-lower latent space and then reconstruct them.
-
-References:
-    Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. "Gradient-based
-    learning applied to document recognition." Proceedings of the IEEE,
-    86(11):2278-2324, November 1998.
-
-Links:
-    [MNIST Dataset] http://yann.lecun.com/exdb/mnist/
-
-Author: Aymeric Damien
-Refactoring and updating: Steffen Kunz and Ante Skoric
-Project: https://github.com/aymericdamien/TensorFlow-Examples/
+""" MNIST Dataset http://yann.lecun.com/exdb/mnist/
+Created with TensorFlow tutorial
 """
 from __future__ import division, print_function, absolute_import
 
